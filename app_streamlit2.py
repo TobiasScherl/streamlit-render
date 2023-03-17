@@ -5,11 +5,13 @@ import streamlit as st  # pip install streamlit
 # emojis: https://www.webfx.com/tools/emoji-cheat-sheet/
 st.set_page_config(page_title="Sales Dashboard", page_icon=":star2:", layout="wide")
 
+url = 'https://raw.githubusercontent.com/TobiasScherl/streamlit-render/main/supermarkt_sales.xlsx'
+
 # ---- READ EXCEL ----
 @st.cache_data
 def get_data_from_excel():
     df = pd.read_excel(
-        io="C:/Users/tobis/Downloads/supermarkt_sales.xlsx",
+        io=url,
         engine="openpyxl",
         sheet_name="Sales",
         skiprows=3,
