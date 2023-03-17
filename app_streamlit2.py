@@ -12,7 +12,6 @@ url = 'https://raw.githubusercontent.com/TobiasScherl/streamlit-render/main/supe
 def get_data_from_excel():
     df = pd.read_excel(
         io=url,
-        engine="openpyxl",
         sheet_name="Sales",
         skiprows=3,
         usecols="B:R",
